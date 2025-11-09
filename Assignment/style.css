@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.header p {
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+/* Pricing Table */
+.pricing-table {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+/* Plan Card */
+.plan {
+  background: white;
+  border-radius: 12px;
+  padding: 30px 25px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.plan:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Pro Plan Highlight */
+.plan.pro {
+  border: 2px solid #ff9800;
+  transform: scale(1.03);
+}
+
+.plan.pro::before {
+  content: "POPULAR";
+  position: absolute;
+  top: 15px;
+  right: -35px;
+  background: #ff9800;
+  color: white;
+  padding: 5px 40px;
+  transform: rotate(45deg);
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Plan Header */
+.plan h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+.plan h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: #3498db;
+  border-radius: 3px;
+}
+
+.plan.pro h2::after {
+  background: #ff9800;
+}
+
+/* Price Styling */
+.price {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin: 20px 0;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.price span {
+  font-size: 1rem;
+  color: #7f8c8d;
+  font-weight: normal;
+  margin-top: 5px;
+}
+
+/* Features List */
+.features {
+  list-style: none;
+  margin: 25px 0 30px;
+  text-align: left;
+  padding: 0 10px;
+}
+
+.features li {
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.features li::before {
+  content: "✓";
+  color: #2ecc71;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.features .disabled {
+  color: #bdc3c7;
+  text-decoration: line-through;
+}
+
+.features .disabled::before {
+  content: "✕";
+  color: #e74c3c;
+}
+
+/* Buttons */
+.buy-now {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #3498db;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.buy-now::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #2980b9;
+  z-index: -1;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+}
+
+.buy-now:hover::after {
+  transform: scaleY(1);
+}
+
+.buy-now:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(41, 128, 185, 0.3);
+}
+
+/* Pro Plan Button */
+.pro-btn {
+  background: #ff9800;
+}
+
+.pro-btn::after {
+  background: #f57c00;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .pricing-table {
+    gap: 25px;
+  }
+
+  .plan {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-table {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .plan {
+    max-width: 350px;
+    margin-bottom: 0;
+  }
+
+  .plan.pro {
+    transform: none;
+  }
+
+  .plan:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.plan {
+  animation: fadeIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.plan:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.plan:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.plan:nth-child(3) {
+  animation-delay: 0.5s;
+}
