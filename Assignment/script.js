@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // Adding hover effect to plan cards
-  const plans = document.querySelectorAll('.plan');
+  const plans = document.querySelectorAll('.plan');+
   
   plans.forEach(plan => {
     plan.addEventListener('mouseenter', function() {
