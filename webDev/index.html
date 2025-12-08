@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Product Dashboard</h1>
+    </header>
+
+    <main>
+        <section class="dashboard-section">
+            <div class="filters-container">
+                <div class="filter-group">
+                    <label for="name-filter">Filter by Name:</label>
+                    <input type="text" id="name-filter" placeholder="Search products...">
+                </div>
+                <div class="filter-group">
+                    <button id="sort-price-btn">Sort by Price</button>
+                </div>
+                <div class="filter-group">
+                    <p id="count-output">Products shown: 0</p>
+                </div>
+            </div>
+            
+            <div id="product-list">
+                <!-- Product data will be inserted dynamically here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Product Dashboard. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
